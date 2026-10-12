@@ -1,4 +1,4 @@
-from campusflow.tickets import generate_ticket_id, create_and_store_ticket
+from campusflow.tickets import generate_ticket_id, create_and_store_ticket, create_ticket
 
 import unittest
 
@@ -41,4 +41,17 @@ class TestCreateAndStoreTicket(unittest.TestCase):
         self.assertEqual(ticket_id, "T001")
         self.assertEqual(ticket_status, "open")
 
-class Test
+class TestCreateTicket(unittest.TestCase):
+    def test_empty_title(self):
+       with self.assertRaises(ValueError, new_ticket):
+           create_ticket("", "Network", "low", 15, "T006")
+
+    def test_empty_category(self):
+       with self.assertRaises(ValueError):
+           create_ticket("Faulty Mouse", "", "low", 15, "T006")
+
+    def test_empty_urgency(self):
+        with self.assertRaises(ValueError):
+            create_ticket("Faulty Mouse", "Network", "", 15, "T006")
+
+    def 
