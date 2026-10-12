@@ -1,4 +1,4 @@
-from campusflow.tickets import generate_ticket_id
+from campusflow.tickets import generate_ticket_id, create_and_store_ticket
 
 import unittest
 
@@ -29,3 +29,16 @@ class TestGenerateTicketId(unittest.TestCase):
         ]
         actual = generate_ticket_id(records)
         self.assertEqual(actual,"T008")
+
+class TestCreateAndStoreTicket(unittest.TestCase):
+    def test_creates_and_stores_ticket(self):
+        records = []
+        ticket = create_and_store_ticket(records,"Wi-Fi unavailable", "Network", "high", 5)
+        actual = len(records)
+        ticket_id = records[0]["id"]
+        ticket_status = records[0]["status"]
+        self.assertEqual(actual, 1)
+        self.assertEqual(ticket_id, "T001")
+        self.assertEqual(ticket_status, "open")
+
+class Test

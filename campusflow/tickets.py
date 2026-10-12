@@ -40,38 +40,38 @@ def create_ticket(title, category, urgency, affected_users, new_id):
     return my_ticket
 
 # This is fake to test our generate_ticket_id function
-records = [
-    {
-        "id": "T007",
-        "title": "Wi-Fi is down",
-        "category": "Network",
-        "urgency": "high",
-        "affected_users": 15,
-        "priority": "critical",
-        "status": "open",
-        "assigned_to": None
-    },
-    {
-        "id": "T003",
-        "title": "Laptop is faulty",
-        "category": "Hardware",
-        "urgency": "medium",
-        "affected_users": 2,
-        "priority": "medium",
-        "status": "open",
-        "assigned_to": None
-    },
-    {
-        "id": "T001",
-        "title": "Cannot access learning platform",
-        "category": "Software",
-        "urgency": "low",
-        "affected_users": 1,
-        "priority": "low",
-        "status": "open",
-        "assigned_to": None
-    }
-]
+# records = [
+#     {
+#         "id": "T007",
+#         "title": "Wi-Fi is down",
+#         "category": "Network",
+#         "urgency": "high",
+#         "affected_users": 15,
+#         "priority": "critical",
+#         "status": "open",
+#         "assigned_to": None
+#     },
+#     {
+#         "id": "T003",
+#         "title": "Laptop is faulty",
+#         "category": "Hardware",
+#         "urgency": "medium",
+#         "affected_users": 2,
+#         "priority": "medium",
+#         "status": "open",
+#         "assigned_to": None
+#     },
+#     {
+#         "id": "T001",
+#         "title": "Cannot access learning platform",
+#         "category": "Software",
+#         "urgency": "low",
+#         "affected_users": 1,
+#         "priority": "low",
+#         "status": "open",
+#         "assigned_to": None
+#     }
+# ]
 
 # records = []
 # print(create_ticket("", "network", "high", 15))
@@ -98,6 +98,7 @@ def create_and_store_ticket(records, title, category, urgency, affected_users):
     records.append(new_ticket)
     return new_ticket
 
-print(create_and_store_ticket(records, "Faulty mouse", "network", "high", 4))
-print(records[-1])
-print(generate_ticket_id(records))
+# print(create_and_store_ticket(records, "Faulty mouse", "network", "high", 4))
+# print(records[-1])
+# print(generate_ticket_id(records))
+
