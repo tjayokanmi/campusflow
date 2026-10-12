@@ -43,8 +43,12 @@ class TestCreateAndStoreTicket(unittest.TestCase):
 
 class TestCreateTicket(unittest.TestCase):
     def test_empty_title(self):
-       with self.assertRaises(ValueError, new_ticket):
+       with self.assertRaises(ValueError):
            create_ticket("", "Network", "low", 15, "T006")
+
+    def test_blank_title(self):
+       with self.assertRaises(ValueError):
+           create_ticket("   ", "Network", "low", 15, "T006")
 
     def test_empty_category(self):
        with self.assertRaises(ValueError):
@@ -54,4 +58,10 @@ class TestCreateTicket(unittest.TestCase):
         with self.assertRaises(ValueError):
             create_ticket("Faulty Mouse", "Network", "", 15, "T006")
 
-    def 
+    def test_zero_affected_users(self):
+        with self.assertRaises(ValueError):
+            create_ticket("Faulty Mouse", "Network", "low", 0, "T006")
+    
+    def test_negative_affected_users(self):
+        with self.assertRaises(ValueError):
+            create_ticket("Faulty Mouse", "Network", "low", -3, "T006")
