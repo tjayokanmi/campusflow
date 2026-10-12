@@ -1,4 +1,4 @@
-from priority import calculate_priority
+from .priority import calculate_priority
 
 def create_ticket(title, category, urgency, affected_users, new_id):
 

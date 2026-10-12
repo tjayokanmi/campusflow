@@ -1,3 +1,5 @@
+from campusflow.priority import calculate_priority 
+
 assert calculate_priority("high", 10) == "critical"
 assert calculate_priority("high", 2) == "high"
 assert calculate_priority("low", 10) == "high"
